@@ -18,7 +18,7 @@
 
 ![Testimonials](public/screenshots/Vikram-Samak-Portfolio-Testimonials.png)
 
-![Contact](public\screenshots\Vikram-Samak-Portfolio-Contact.png)
+![Contact](public/screenshots/Vikram-Samak-Portfolio-Contact.png)
 
 ## 🔗 Links
 
