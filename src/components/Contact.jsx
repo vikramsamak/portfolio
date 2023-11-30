@@ -23,14 +23,14 @@ const Contact = () => {
     e.preventDefault();
     if (form.name !== "" && form.email !== "" && form.message !== "") {
       setLoading(true);
-      emailjs.send('service_uy9jk3v', 'template_zyez3qw', {
+      emailjs.send(import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLATE_KEY, {
         from_name: form.name,
         to_name: 'Vikram',
         from_email: form.email,
-        to_email: 'vikramsamak02@gmail.com',
+        to_email: import.meta.env.VITE_EMAIL,
         message: form.message
       },
-        'kdNGWi5PBXOfD1ML1').then(() => {
+        import.meta.env.VITE_API_KEY).then(() => {
           setLoading(false)
           toast.success("Thank You . I will get back to you as soon as posssible.", {
             duration: 5000,
