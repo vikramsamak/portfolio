@@ -11,7 +11,7 @@ export const DATA = {
     "Web developer with over 2 years of professional experience designing and delivering responsive, scalable web applications.",
   summary:
     "Web developer with over 2 years of professional experience designing and delivering responsive, scalable web applications using React.js, Next.js, Node.js, and MongoDB. Skilled in both frontend and backend development, with a strong focus on clean, maintainable code, user experience, and performance optimization. Rapid learner and effective collaborator, applying technical expertise to solve practical challenges.",
-  avatarUrl: "/me.png",
+  avatarUrl: "/me.jpg",
   skills: [
     "HTML",
     "CSS",
