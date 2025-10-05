@@ -28,8 +28,9 @@ const BlurFade = ({
   inViewMargin = "-50px",
   blur = "6px",
 }: BlurFadeProps) => {
-  const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inViewOptions: any = { once: true, rootMargin: inViewMargin };
+  const inViewResult = useInView(ref, inViewOptions);
   const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
