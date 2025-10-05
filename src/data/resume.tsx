@@ -4,7 +4,7 @@ import { HomeIcon } from "lucide-react";
 export const DATA = {
   name: "Vikram Samak",
   initials: "VS",
-  url: "https://github.com/vikramsamak",
+  url: "https://www.vikramsamak.com",
   location: "Satara, India",
   locationLink: "https://www.google.com/maps/place/satara",
   description:
