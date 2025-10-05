@@ -53,12 +53,9 @@ export default function Page() {
             <h2 className="text-xl font-bold">Work Experience</h2>
           </BlurFade>
           {DATA.work.map((work, id) => (
-            <BlurFade
-              key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-            >
+            <BlurFade key={id} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
               <ResumeCard
-                key={work.company}
+                key={id}
                 logoUrl={work.logoUrl}
                 altText={work.company}
                 title={work.company}
@@ -78,12 +75,9 @@ export default function Page() {
             <h2 className="text-xl font-bold">Education</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
-            <BlurFade
-              key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-            >
+            <BlurFade key={id} delay={BLUR_FADE_DELAY * 8 + id * 0.05}>
               <ResumeCard
-                key={education.school}
+                key={id}
                 href={education.href}
                 logoUrl={education.logoUrl}
                 altText={education.school}
@@ -160,6 +154,16 @@ export default function Page() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Get in Touch
               </h2>
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Have a question or want to work together? Send me an email at{" "}
+                <a
+                  href={`mailto:${DATA.contact.email}`}
+                  className="no-underline font-medium"
+                >
+                  {DATA.contact.email}
+                </a>
+                .
+              </p>
             </div>
           </BlurFade>
         </div>
