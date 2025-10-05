@@ -25,7 +25,10 @@ export const DATA = {
     "Java",
     "C++",
   ],
-  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
+  navbar: [
+    { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+  ],
   contact: {
     email: "hello@example.com",
     tel: "+123456789",
