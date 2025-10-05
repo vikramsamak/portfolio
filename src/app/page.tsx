@@ -1,11 +1,25 @@
-import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
-import Markdown from "react-markdown";
+import dynamic from "next/dynamic";
+
+const BlurFade = dynamic(() => import("@/components/magicui/blur-fade"));
+const BlurFadeText = dynamic(() => import("@/components/magicui/blur-fade-text"));
+const ProjectCard = dynamic(() =>
+  import("@/components/project-card").then((mod) => mod.ProjectCard)
+);
+const ResumeCard = dynamic(() =>
+  import("@/components/resume-card").then((mod) => mod.ResumeCard)
+);
+const Avatar = dynamic(() =>
+  import("@/components/ui/avatar").then((mod) => mod.Avatar)
+);
+const AvatarFallback = dynamic(() =>
+  import("@/components/ui/avatar").then((mod) => mod.AvatarFallback)
+);
+const AvatarImage = dynamic(() =>
+  import("@/components/ui/avatar").then((mod) => mod.AvatarImage)
+);
+const Badge = dynamic(() => import("@/components/ui/badge").then((mod) => mod.Badge));
+const Markdown = dynamic(() => import("react-markdown"));
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -53,9 +67,12 @@ export default function Page() {
             <h2 className="text-xl font-bold">Work Experience</h2>
           </BlurFade>
           {DATA.work.map((work, id) => (
-            <BlurFade key={id} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
+            <BlurFade
+              key={work.company}
+              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+            >
               <ResumeCard
-                key={id}
+                key={work.company}
                 logoUrl={work.logoUrl}
                 altText={work.company}
                 title={work.company}
@@ -75,9 +92,12 @@ export default function Page() {
             <h2 className="text-xl font-bold">Education</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
-            <BlurFade key={id} delay={BLUR_FADE_DELAY * 8 + id * 0.05}>
+            <BlurFade
+              key={education.school}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            >
               <ResumeCard
-                key={id}
+                key={education.school}
                 href={education.href}
                 logoUrl={education.logoUrl}
                 altText={education.school}
@@ -158,7 +178,7 @@ export default function Page() {
                 Have a question or want to work together? Send me an email at{" "}
                 <a
                   href={`mailto:${DATA.contact.email}`}
-                  className="no-underline font-medium"
+                  className="text-blue-500 hover:underline"
                 >
                   {DATA.contact.email}
                 </a>
