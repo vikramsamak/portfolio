@@ -5,6 +5,8 @@ export const DATA = {
   name: "Vikram Samak",
   initials: "VS",
   url: "https://www.vikramsamak.com",
+  jobTitle: "Senior Software Engineer",
+  company: "Athang Infotech",
   location: "Satara, India",
   locationLink: "https://www.google.com/maps/place/satara",
   description:

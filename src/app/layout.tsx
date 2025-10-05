@@ -5,6 +5,7 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import StructuredData from "@/components/structured-data";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -67,6 +68,7 @@ export default function RootLayout({
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
+        <StructuredData />
       </body>
     </html>
   );
