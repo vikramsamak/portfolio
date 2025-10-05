@@ -2,7 +2,9 @@ import { DATA } from "@/data/resume";
 import dynamic from "next/dynamic";
 
 const BlurFade = dynamic(() => import("@/components/magicui/blur-fade"));
-const BlurFadeText = dynamic(() => import("@/components/magicui/blur-fade-text"));
+const BlurFadeText = dynamic(
+  () => import("@/components/magicui/blur-fade-text")
+);
 const ProjectCard = dynamic(() =>
   import("@/components/project-card").then((mod) => mod.ProjectCard)
 );
@@ -18,7 +20,9 @@ const AvatarFallback = dynamic(() =>
 const AvatarImage = dynamic(() =>
   import("@/components/ui/avatar").then((mod) => mod.AvatarImage)
 );
-const Badge = dynamic(() => import("@/components/ui/badge").then((mod) => mod.Badge));
+const Badge = dynamic(() =>
+  import("@/components/ui/badge").then((mod) => mod.Badge)
+);
 const Markdown = dynamic(() => import("react-markdown"));
 
 const BLUR_FADE_DELAY = 0.04;
@@ -44,7 +48,12 @@ export default function Page() {
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                <AvatarImage
+                  alt={DATA.name}
+                  src={DATA.avatarUrl}
+                  fetchPriority="high"
+                  loading="eager"
+                />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
             </BlurFade>
@@ -178,7 +187,7 @@ export default function Page() {
                 Have a question or want to work together? Send me an email at{" "}
                 <a
                   href={`mailto:${DATA.contact.email}`}
-                  className="text-blue-500 hover:underline"
+                  className="no-underline"
                 >
                   {DATA.contact.email}
                 </a>
