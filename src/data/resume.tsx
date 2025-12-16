@@ -64,7 +64,7 @@ export const DATA = {
       title: "Senior Software Engineer",
       logoUrl: "",
       start: "Jan 2025",
-      end: "Present",
+      end: "Dec 2025",
       description:
         "Leading the development of full-stack web applications using Next.js, React.js, Node.js, and MongoDB. Actively involved in system design discussions, architecture planning, and feature development. Worked on optimizing performance and improving code quality through reviews and refactoring.",
     },
