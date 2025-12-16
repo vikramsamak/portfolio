@@ -29,7 +29,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="flex flex-col min-h-dvh space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -41,7 +41,7 @@ export default function Page() {
                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
               <BlurFadeText
-                className="max-w-[600px] md:text-xl"
+                className="max-w-150 md:text-xl"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
@@ -76,10 +76,7 @@ export default function Page() {
             <h2 className="text-xl font-bold">Work Experience</h2>
           </BlurFade>
           {DATA.work.map((work, id) => (
-            <BlurFade
-              key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-            >
+            <BlurFade key={id} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
               <ResumeCard
                 key={work.company}
                 logoUrl={work.logoUrl}
@@ -151,7 +148,7 @@ export default function Page() {
               </div>
             </div>
           </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-200 mx-auto">
             {DATA.projects.map((project, id) => (
               <BlurFade
                 key={project.title}
@@ -183,7 +180,7 @@ export default function Page() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Get in Touch
               </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="mx-auto max-w-150 text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Have a question or want to work together? Send me an email at{" "}
                 <a
                   href={`mailto:${DATA.contact.email}`}
