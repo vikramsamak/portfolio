@@ -1,5 +1,7 @@
 import { DATA } from "@/data/resume";
 import dynamic from "next/dynamic";
+import { Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const BlurFade = dynamic(() => import("@/components/magicui/blur-fade"));
 const BlurFadeText = dynamic(
@@ -45,6 +47,13 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <a href="/pdf/Vikram Samak-Resume.pdf" target="_blank">
+                  <Button className="mt-4">
+                    Download Resume <Download className="ml-2 size-4" />
+                  </Button>
+                </a>
+              </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
