@@ -8,6 +8,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": "22.13.1",
+    "npm": "11.5.2"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
